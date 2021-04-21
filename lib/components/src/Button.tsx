@@ -7,7 +7,11 @@ type ButtonProps = {
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
   const { name, ...other } = props;
-  return <MuiButton {...other}>hello {name}, click me</MuiButton>;
+  return (
+    <MuiButton ref={ref} {...other}>
+      hello {name}, click me
+    </MuiButton>
+  );
 });
 
 export default Button;
