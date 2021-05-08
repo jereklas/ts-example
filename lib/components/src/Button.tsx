@@ -5,14 +5,23 @@ type ButtonProps = {
   name: "alice" | "bob";
 } & MuiButtonProps;
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
+const Button = (props: ButtonProps) => {
   const { name, ...other } = props;
   return (
-    <MuiButton ref={ref} {...other}>
+    <MuiButton
+      css={{
+        backgroundColor: "red",
+        "& .MuiButton-root": {
+          backgroundColor: "green",
+        },
+      }}
+      {...other}
+    >
+      <MuiButton>blah</MuiButton>
       hello {name}, click me
     </MuiButton>
   );
-});
+};
 
 export default Button;
 export type { ButtonProps };

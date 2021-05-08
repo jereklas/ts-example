@@ -1,7 +1,11 @@
-import { Button } from "components";
+import { DatePicker } from "components";
 
 const App = () => {
-  return <Button name="bob" variant="outlined" />;
+  return (
+    <div css={{ padding: "24px" }}>
+      <DatePicker />
+    </div>
+  );
 };
 
 export default App;
